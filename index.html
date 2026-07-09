@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>श्री Jewellers — Handcrafted Fine Jewellery, Mandvi, Kutch</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<style>
+  :root{
+    --ink:#171310;
+    --ink-2:#211b16;
+    --gold:#c8a15a;
+    --gold-bright:#e6c98a;
+    --gold-dim:#8a6f3d;
+    --ivory:#f2e9da;
+    --ivory-dim:#c9bfae;
+    --line: rgba(200,161,90,0.15);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--ink);
+    color:var(--ivory);
+    font-family:'Jost', sans-serif;
+    font-weight:300;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,.serif{
+    font-family:'Cormorant Garamond', serif;
+    font-weight:500;
+    letter-spacing:0.02em;
+  }
+  .eyebrow{
+    font-family:'Jost',sans-serif;
+    font-size:0.72rem;
+    letter-spacing:0.35em;
+    text-transform:uppercase;
+    color:var(--gold);
+  }
+  a{color:inherit; text-decoration:none;}
+  img{max-width:100%; display:block;}
+
+  /* ---------- ornamental signature motif ---------- */
+  .motif{
+    width:64px; height:64px;
+    margin:0 auto;
+    opacity:0.9;
+  }
+  .motif path{
+    fill:none;
+    stroke:var(--gold);
+    stroke-width:1.1;
+  }
+
+  /* ---------- header ---------- */
+  header{
+    position:fixed; top:0; left:0; right:0; z-index:50;
+    display:flex; align-items:center; justify-content:space-between;
+    padding:22px 6vw;
+    background:rgba(23, 19, 16, 0.95);
+    backdrop-filter:blur(6px);
+    transition:background 0.4s ease, border 0.4s ease;
+  }
+  header.scrolled{ border-bottom:1px solid var(--line); }
+  .logo{
+    font-family:'Cormorant Garamond', serif;
+    font-size:1.5rem;
+    letter-spacing:0.08em;
+  }
+  .logo span{ color:var(--gold); }
+  nav{ display:flex; gap:38px; }
+  nav a{
+    font-size:0.78rem;
+    letter-spacing:0.18em;
+    text-transform:uppercase;
+    color:var(--ivory-dim);
+    position:relative;
+    padding-bottom:4px;
+  }
+  nav a:hover{ color:var(--gold-bright); }
+
+  /* ---------- hero ---------- */
+  .hero{
+    min-height:100svh;
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    text-align:center;
+    padding:140px 6vw 80px;
+    position:relative;
+    background:
+      radial-gradient(ellipse at 50% 0%, rgba(200,161,90,0.10), transparent 60%),
+      linear-gradient(180deg, var(--ink) 0%, #1c1712 100%);
+  }
+  .hero::before{
+    content:"";
+    position:absolute; inset:14px;
+    border:1px solid var(--line);
+    pointer-events:none;
+  }
+  .hero .eyebrow{ margin-bottom:26px; }
+  .hero h1{
+    font-size:clamp(2.6rem, 6.5vw, 5.2rem);
+    line-height:1.05;
+    max-width:16ch;
+  }
+  .hero h1 em{
+    font-style:italic;
+    color:var(--gold-bright);
+  }
+  .hero p{
+    margin-top:26px;
+    max-width:46ch;
+    color:var(--ivory-dim);
+    font-size:1.05rem;
+    line-height:1.7;
+  }
+  .cta-row{
+    margin-top:44px;
+    display:flex; gap:20px; flex-wrap:wrap; justify-content:center;
+  }
+  .btn{
+    display:inline-block;
+    padding:15px 34px;
+    font-size:0.78rem;
+    letter-spacing:0.2em;
+    text-transform:uppercase;
+    border:1px solid var(--gold);
+    color:var(--gold-bright);
+    transition:all 0.3s ease;
+  }
+  .btn:hover{ background:var(--gold); color:var(--ink); }
+  .btn.solid{
+    background:var(--gold);
+    color:var(--ink);
+  }
+  .btn.solid:hover{ background:var(--gold-bright); }
+
+  .hero .motif{ margin-top:56px; }
+
+  /* ---------- price bar ---------- */
+  .price-bar {
+    background: var(--ink-2);
+    padding: 20px 0;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    text-align: center;
+  }
+  .price-bar .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  .price-bar .item {
+    font-size: 0.9rem;
+    letter-spacing: 0.05em;
+    color: var(--ivory-dim);
+  }
+  .price-bar .item span {
+    color: var(--gold-bright);
+    font-weight: 600;
+  }
+
+  /* ---------- section shell ---------- */
+  section{ padding:110px 6vw; position:relative; }
+  .section-head{ text-align:center; max-width:640px; margin:0 auto 64px; }
+  .section-head h2{ font-size:clamp(2rem,4vw,3rem); margin-top:16px; }
+  .section-head p{ color:var(--ivory-dim); margin-top:18px; line-height:1.7; }
+
+  /* ---------- collections ---------- */
+  .cat-tabs{
+    display:flex; justify-content:center; gap:12px; flex-wrap:wrap;
+    margin-bottom:56px;
+  }
+  .cat-tab{
+    padding:10px 22px;
+    font-size:0.74rem; letter-spacing:0.16em; text-transform:uppercase;
+    border:1px solid var(--line);
+    color:var(--ivory-dim);
+    cursor:pointer;
+    transition:all 0.25s ease;
+    background:none;
+  }
+  .cat-tab.active, .cat-tab:hover{
+    border-color:var(--gold);
+    color:var(--gold-bright);
+  }
+  .grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
+    gap:34px;
+  }
+  .card{
+    border:1px solid var(--line);
+    background:linear-gradient(180deg, rgba(200,161,90,0.04), transparent);
+    transition:transform 0.35s ease, border-color 0.35s ease;
+    display: flex;
+    flex-direction: column;
+  }
+  .card:hover{ transform:translateY(-6px); border-color:var(--gold-dim); }
+  .card .thumb{
+    aspect-ratio:1/1;
+    overflow:hidden;
+    background:#1a1613;
+    border-bottom:1px solid var(--line);
+  }
+  .card .thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .card .info{ padding:24px 22px 28px; text-align: center; }
+  .card .info .eyebrow{ font-size:0.62rem; }
+  .card .info h3{ font-size:1.3rem; margin-top:8px; }
+  .card .info .price{ color:var(--gold-bright); margin-top:10px; font-size:0.95rem; letter-spacing:0.03em; }
+  .card .info .enquire{
+    display:inline-block; margin-top:18px;
+    font-size:0.7rem; letter-spacing:0.16em; text-transform:uppercase;
+    color:var(--gold); border-bottom:1px solid var(--gold-dim); padding-bottom:3px;
+  }
+  .card .info .enquire:hover{ color:var(--gold-bright); border-color:var(--gold-bright); }
+
+  /* ---------- about ---------- */
+  .about{
+    background:var(--ink-2);
+    display:grid; grid-template-columns:1fr 1fr; gap:70px; align-items:center;
+  }
+  .about .frame{
+    aspect-ratio:4/5;
+    border:1px solid var(--line);
+    padding:14px;
+  }
+  .about .frame .inner{
+    height:100%; width:100%;
+    background: url('https://i.ibb.co/7JVwXs0j/IMG-20260709-WA0006.jpg') center/cover no-repeat;
+  }
+  .about .copy .eyebrow{ margin-bottom:18px; }
+  .about .copy h2{ font-size:clamp(1.8rem,3vw,2.6rem); margin-bottom:22px; }
+  .about .copy p{ color:var(--ivory-dim); line-height:1.8; margin-bottom:16px; }
+  .stat-row{ display:flex; gap:44px; margin-top:34px; flex-wrap: wrap; }
+  .stat h3{ color:var(--gold-bright); font-size:2rem; }
+  .stat span{ font-size:0.7rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--ivory-dim); }
+
+  /* ---------- inquiry ---------- */
+  .inquiry{
+    background:
+      radial-gradient(ellipse at 50% 0%, rgba(200,161,90,0.08), transparent 60%),
+      var(--ink);
+  }
+  .inquiry-box{
+    max-width:640px; margin:0 auto;
+    border:1px solid var(--line);
+    padding:56px 48px;
+  }
+  .form-row{ display:grid; grid-template-columns:1fr 1fr; gap:22px; margin-bottom:22px; }
+  .field{ display:flex; flex-direction:column; gap:8px; }
+  .field.full{ grid-column:1/-1; }
+  label{ font-size:0.68rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--ivory-dim); }
+  input, select, textarea{
+    background:transparent;
+    border:none;
+    border-bottom:1px solid var(--line);
+    color:var(--ivory);
+    font-family:'Jost', sans-serif;
+    font-size:0.95rem;
+    padding:10px 2px;
+    outline:none;
+  }
+  input:focus, select:focus, textarea:focus{ border-color:var(--gold); }
+  select option{ background:var(--ink-2); }
+  textarea{ resize:vertical; min-height:80px; }
+  .inquiry-box .btn{ margin-top:12px; width:100%; text-align:center; cursor:pointer; }
+  
+  .social-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 24px;
+    flex-wrap: wrap;
+  }
+  .social-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #fff;
+    transition: 0.3s;
+  }
+  .social-btn.wa { background: #25D366; }
+  .social-btn.wa:hover { background: #1ebc5a; transform: translateY(-2px); }
+  .social-btn.ig { background: #d62976; }
+  .social-btn.ig:hover { background: #c01e65; transform: translateY(-2px); }
+
+  .map-container {
+    margin-top: 34px;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--line);
+  }
+  .map-container iframe {
+    width: 100%;
+    height: 280px;
+    border: 0;
+    display: block;
+  }
+
+  .confirm-msg{
+    display:none; text-align:center; padding:30px 0;
+  }
+  .confirm-msg.show{ display:block; }
+  .confirm-msg .motif{ margin-bottom:20px; }
+
+  /* ---------- footer ---------- */
+  footer{
+    padding:70px 6vw 40px;
+    border-top:1px solid var(--line);
+    display:grid; grid-template-columns:1.4fr 1fr 1fr; gap:50px;
+  }
+  footer p{ color:var(--ivory-dim); font-size:0.9rem; line-height:1.8; margin-top: 8px;}
+  footer h4{
+    font-size:0.72rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--gold);
+    margin-bottom:18px; font-weight:400; font-family:'Jost', sans-serif;
+  }
+  footer a{ display:block; color:var(--ivory-dim); font-size:0.9rem; margin-bottom:10px; }
+  footer a:hover{ color:var(--gold-bright); }
+  .foot-bottom{
+    text-align:center; margin-top:60px; padding-top:26px; border-top:1px solid var(--line);
+    font-size:0.75rem; color:var(--ivory-dim); letter-spacing:0.04em;
+  }
+
+  @media (max-width:820px){
+    nav{ display:none; }
+    .about{ grid-template-columns:1fr; }
+    footer{ grid-template-columns:1fr; }
+    .form-row{ grid-template-columns:1fr; }
+    .inquiry-box{ padding:40px 26px; }
+  }
+</style>
+</head>
+<body>
+
+<header id="site-header">
+  <div class="logo">श्री <span>JEWELLERS</span></div>
+  <nav>
+    <a href="#collections">Collections</a>
+    <a href="#about">Our Story</a>
+    <a href="#inquiry">Enquire</a>
+    <a href="#contact">Visit Us</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="eyebrow">Mandvi, Kutch · Handcrafted Tradition</div>
+  <h1>Jewellery carried<br><em>through generations</em></h1>
+  <p>Each piece at Shree Jewellers is shaped by hand, in gold and stone, following techniques passed down across generations of our karigars.</p>
+  <div class="cta-row">
+    <a href="#collections" class="btn solid">View Collection</a>
+    <a href="https://wa.me/916358158073?text=Hi%20Shree%20Jewellers%2C%20I%20would%20like%20to%20book%20a%20showroom%20visit%20to%20view%20your%20handcrafted%20collection." target="_blank" class="btn">Book a Visit</a>
+  </div>
+  <svg class="motif" viewBox="0 0 64 64">
+    <path d="M32 4 C 40 16, 40 24, 32 32 C 24 24, 24 16, 32 4 Z"/>
+    <path d="M32 32 C 40 40, 40 48, 32 60 C 24 48, 24 40, 32 32 Z"/>
+    <circle cx="32" cy="32" r="3"/>
+    <path d="M8 32 C 18 28, 26 30, 32 32 C 26 34, 18 36, 8 32 Z"/>
+    <path d="M56 32 C 46 28, 38 30, 32 32 C 38 34, 46 36, 56 32 Z"/>
+  </svg>
+</section>
+
+<!-- PRICE BAR -->
+<div class="price-bar">
+    <div class="container">
+        <div class="item">18K Gold: <span>₹5,200</span> / 1g</div>
+        <div class="item">22K Gold: <span>₹6,300</span> / 1g</div>
+        <div class="item">24K Gold: <span>₹6,900</span> / 1g</div>
+        <div class="item">Silver: <span>₹95,000</span> / 1kg</div>
+    </div>
+</div>
+
+<!-- COLLECTIONS -->
+<section id="collections">
+  <div class="section-head">
+    <div class="eyebrow">The Collection</div>
+    <h2>Every category, handworked</h2>
+    <p>Browse our curated masterpieces below. Tap Enquire on any item to connect directly with us via WhatsApp.</p>
+  </div>
+
+  <div class="cat-tabs">
+    <button class="cat-tab active" data-cat="all">All</button>
+    <button class="cat-tab" data-cat="necklaces">Necklaces & Malas</button>
+    <button class="cat-tab" data-cat="sets">Festive Sets</button>
+    <button class="cat-tab" data-cat="earrings">Earrings</button>
+    <button class="cat-tab" data-cat="bangles">Bangles & Kadas</button>
+    <button class="cat-tab" data-cat="rings">Rings</button>
+  </div>
+
+  <div class="grid" id="product-grid">
+    <!-- Dynamic Cards injected via Javascript containing all 9 items -->
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="frame">
+    <div class="inner"></div>
+  </div>
+  <div class="copy">
+    <div class="eyebrow">Our Story</div>
+    <h2>Rooted in Mandvi, built on trust</h2>
+    <p>Shree Jewellers began as a small family counter and has grown into a name families in Kutch return to for weddings, festivals, and everyday adornment.</p>
+    <p>We work directly with skilled karigars who hand-set every stone and finish every chain — no two pieces leave our counter looking machine-made.</p>
+    <div class="stat-row">
+      <div class="stat"><h3>BIS</h3><span>Hallmarked Gold</span></div>
+      <div class="stat"><h3>100%</h3><span>Handcrafted</span></div>
+      <div class="stat"><h3>Direct</h3><span>Karigar Pricing</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- INQUIRY -->
+<section class="inquiry" id="inquiry">
+  <div class="section-head">
+    <div class="eyebrow">Get in Touch</div>
+    <h2>Send us an enquiry</h2>
+    <p>Share a few details and our team will reach out to you, or use our instant social links below to speak with us right now.</p>
+  </div>
+
+  <div class="inquiry-box">
+    <form id="inquiry-form">
+      <div class="form-row">
+        <div class="field">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" required>
+        </div>
+        <div class="field">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" required>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="field">
+          <label for="interest">Interested In</label>
+          <select id="interest">
+            <option>Gold Sets</option>
+            <option>Necklaces & Malas</option>
+            <option>Earrings</option>
+            <option>Bangles & Kadas</option>
+            <option>Rings</option>
+            <option>Custom Handcrafted Ornaments</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="visit">Preferred Showroom Visit</label>
+          <input type="date" id="visit">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="field full">
+          <label for="message">Message</label>
+          <textarea id="message" placeholder="Tell us what you're looking for — budget, custom design weight preferences..."></textarea>
+        </div>
+      </div>
+      <button type="submit" class="btn solid">Submit Enquiry</button>
+    </form>
+
+    <div class="confirm-msg" id="confirm-msg">
+      <svg class="motif" viewBox="0 0 64 64" style="margin:0 auto 20px;">
+        <path d="M32 4 C 40 16, 40 24, 32 32 C 24 24, 24 16, 32 4 Z"/>
+        <path d="M32 32 C 40 40, 40 48, 32 60 C 24 48, 24 40, 32 32 Z"/>
+        <circle cx="32" cy="32" r="3"/>
+      </svg>
+      <h3 style="font-size:1.6rem;">Thank you, <span id="confirm-name"></span></h3>
+      <p style="color:var(--ivory-dim); margin-top:10px;">Your preference sheet has been prepared. Redirecting to WhatsApp to complete your response...</p>
+    </div>
+
+    <!-- Grouped CTA buttons containing both of your active Instagram links -->
+    <div class="social-buttons">
+        <a href="https://wa.me/916358158073" class="social-btn wa" target="_blank"><i class="fab fa-whatsapp"></i> Chat on WhatsApp</a>
+        <a href="https://www.instagram.com/shree_jewellers_mandvikutch" class="social-btn ig" target="_blank"><i class="fab fa-instagram"></i> Instagram Main</a>
+        <a href="https://www.instagram.com/shree.jewellers.mandvi?igsh=MTQwMG84MXk3OHNtYQ==" class="social-btn ig" target="_blank"><i class="fab fa-instagram"></i> Instagram Grid</a>
+    </div>
+
+    <div class="map-container">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d235.88568395856213!2d69.35228715356528!3d22.831034565714705!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjLCsDQ5JzUxLjciTiA2OcKwMjEnMDguNSJF!5e0!3m2!1sen!2sin!4v1741600000000" allowfullscreen loading="lazy"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="contact">
+  <div>
+    <p style="font-weight: 400; color: var(--gold); font-size: 1.1rem; letter-spacing: 0.05em;">श्री JEWELLERS</p>
+    <p>Fine handcrafted gold and stone jewellery, made in Mandvi, Kutch for weddings, festivals, and everyday moments.</p>
+  </div>
+  <div>
+    <h4>Visit</h4>
+    <a href="https://wa.me/916358158073" target="_blank">K.T. Shah Road, Near Chapra Vari Sheri, Mandvi, Gujarat 370465</a>
+    <a href="#">Mon – Sat · 10:30 AM – 8:30 PM</a>
+    <a href="#">Closed Sundays</a>
+  </div>
+  <div>
+    <h4>Connect</h4>
+    <a href="https://wa.me/916358158073" target="_blank">WhatsApp Direct Chat</a>
+    <a href="https://www.instagram.com/shree_jewellers_mandvikutch" target="_blank">Instagram (@shree_jewellers_mandvikutch)</a>
+    <a href="https://www.instagram.com/shree.jewellers.mandvi?igsh=MTQwMG84MXk3OHNtYQ==" target="_blank">Instagram Showroom Portfolio</a>
+    <a href="tel:+916358158073">Call Showroom: +91 63581 58073</a>
+  </div>
+  <div class="foot-bottom" style="grid-column:1/-1;">
+    © 2026 श्री Jewellers. All rights reserved. Handworked in Kutch.
+  </div>
+</footer>
+
+<script>
+  // Scroll header styling modifier
+  const header = document.getElementById('site-header');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 40);
+  });
+
+  // Data Array containing all 9 original image links with correct category filters
+  const PRODUCTS = [
+    { cat:'necklaces', name:'Traditional Gold Choker Box Set', price:'₹ 85,000 – 1,20,000', img:'https://i.ibb.co/0jmq2M9S/motion-photo-1551257267689762343.jpg' },
+    { cat:'necklaces', name:'Royal Gold Beaded Mala', price:'₹ 1,40,000 – 2,10,000', img:'https://i.ibb.co/nNHvbTkR/IMG-20260709-WA0008.jpg' },
+    { cat:'rings', name:'Classic Intricate Gold Ring Collection', price:'₹ 22,000 – 38,000', img:'https://i.ibb.co/rKBR6VKp/IMG-20260709-WA0007.jpg' },
+    { cat:'sets', name:'Elegant Festive Pendant Set', price:'₹ 40,000 – 60,000', img:'https://i.ibb.co/KjZ3NDFG/IMG-20260709-WA0011.jpg' },
+    { cat:'necklaces', name:'Handworked Statement Golden Har', price:'₹ 65,000 – 95,000', img:'https://i.ibb.co/V0smJjkH/IMG-20260709-WA0013.jpg' },
+    { cat:'necklaces', name:'Heritage Gold Necklace Collection', price:'₹ 48,000 – 70,000', img:'https://i.ibb.co/S7yqQ8Tw/IMG-20260709-WA0012.jpg' },
+    { cat:'necklaces', name:'Delicate Solid Gold Chain Neckpiece', price:'₹ 30,000 – 55,000', img:'https://i.ibb.co/KjHXPPxW/IMG-20260709-WA0018.jpg' },
+    { cat:'bangles', name:'Complete Antique Kada & Bangles Set', price:'₹ 26,000 – 42,000', img:'https://i.ibb.co/hFDST0rg/IMG-20260709-WA0016.jpg' },
+    { cat:'sets', name:'Elite Bridal Heritage Long Set', price:'₹ 52,000 – 80,000', img:'https://i.ibb.co/XZvkjfW2/IMG-20260709-WA0017.jpg' }
+  ];
+
+  const grid = document.getElementById('product-grid');
+  
+  function render(filter){
+    grid.innerHTML = '';
+    PRODUCTS.filter(p => filter === 'all' || p.cat === filter).forEach(p => {
+      const card = document.createElement('div');
+      card.className = 'card';
+      
+      let tagText = "Gold Jewellery";
+      if(p.cat === 'sets') tagText = "Festive Set";
+      if(p.cat === 'necklaces') tagText = "Necklace & Mala";
+      if(p.cat === 'rings') tagText = "Fine Ring";
+      if(p.cat === 'bangles') tagText = "Bangle & Kada";
+
+      const waText = encodeURIComponent(`Hi Shree Jewellers, I am interested in exploring details for "${p.name}" listed at ${p.price}.`);
+      
+      card.innerHTML = `
+        <div class="thumb">
+          <img src="${p.img}" alt="${p.name}" loading="lazy">
+        </div>
+        <div class="info">
+          <div class="eyebrow">${tagText}</div>
+          <h3>${p.name}</h3>
+          <div class="price">${p.price}</div>
+          <a href="https://wa.me/916358158073?text=${waText}" target="_blank" class="enquire">Enquire on WhatsApp →</a>
+        </div>`;
+      grid.appendChild(card);
+    });
+  }
+  
+  // Initial card mount rendering sequence activation
+  render('all');
+
+  // Filter tab interactions
+  document.querySelectorAll('.cat-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      document.querySelectorAll('.cat-tab').forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      render(tab.dataset.cat);
+    });
+  });
+
+  // Automated preference-sheet forward processing algorithm
+  const form = document.getElementById('inquiry-form');
+  const confirmMsg = document.getElementById('confirm-msg');
+  
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const name = document.getElementById('name').value || 'Customer';
+    const phone = document.getElementById('phone').value || '';
+    const interest = document.getElementById('interest').value || '';
+    const note = document.getElementById('message').value || '';
+
+    document.getElementById('confirm-name').textContent = name;
+    form.style.display = 'none';
+    confirmMsg.classList.add('show');
+
+    const textOut = `Hello Shree Jewellers, my name is ${name}. I am submitting an item inquiry via your website container. %0A%0APhone: ${phone} %0AInterest: ${interest} %0ANotes: ${note}`;
+    
+    setTimeout(() => {
+        window.open(`https://wa.me/916358158073?text=${textOut}`, '_blank');
+    }, 1800);
+  });
+</script>
+
+</body>
+</html>

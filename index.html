@@ -243,11 +243,11 @@
     transition:transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease;
     display: flex;
     flex-direction: column;
-    animation: cardPop 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation: cardPop 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
     opacity: 0;
   }
   @keyframes cardPop {
-    0% { transform: translateY(12px); opacity: 0; }
+    0% { transform: translateY(8px); opacity: 0; }
     100% { transform: translateY(0); opacity: 1; }
   }
   .card:hover{ transform:translateY(-8px); border-color:var(--gold-bright); box-shadow: 0 12px 24px rgba(0,0,0,0.4); }
@@ -255,16 +255,30 @@
   .card .thumb{
     aspect-ratio:1/1;
     overflow:hidden;
-    background:#1f1a16;
+    background: linear-gradient(90deg, #1f1a16 25%, #2a231e 50%, #1f1a16 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.6s infinite linear;
     border-bottom:1px solid var(--line);
     padding: 10px;
     position: relative;
+  }
+  @keyframes shimmer {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
   }
   .card .thumb img {
     width: 100%;
     height: 100%;
     object-fit: contain;
-    transition: opacity 0.3s ease;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+  }
+  .card .thumb.loaded {
+    background: #1a1613;
+    animation: none;
+  }
+  .card .thumb.loaded img {
+    opacity: 1;
   }
   
   .card .info{ padding:24px 22px 28px; text-align: center; }
@@ -463,19 +477,9 @@
     <button class="filter-btn" id="btn-malas" onclick="filterCatalog('malas')">Traditional Malas (4)</button>
   </div>
 
+  <!-- Main Unified Layout Grid -->
   <div class="grid" id="product-grid">
-    <div class="card" style="opacity:1;">
-      <div class="thumb"><img src="IMG-20260709-WA0061.jpg" alt="Premium Gold Floral Edition Watch" loading="lazy"></div>
-      <div class="info"><div class="eyebrow">Luxury Timepiece</div><h3>Premium Gold Floral Edition Watch</h3><a href="https://wa.me/916358158073?text=Hi%20Shree%20Jewellers%2C%20I%20am%20interested%20in%20exploring%20details%20for%3A%20Premium%20Gold%20Floral%20Edition%20Watch" target="_blank" class="enquire">Enquire on WhatsApp →</a></div>
-    </div>
-    <div class="card" style="opacity:1;">
-      <div class="thumb"><img src="IMG-20260709-WA0062.jpg" alt="Luxury Diamond Studded Rose Gold Watch" loading="lazy"></div>
-      <div class="info"><div class="eyebrow">Luxury Timepiece</div><h3>Luxury Diamond Studded Rose Gold Watch</h3><a href="https://wa.me/916358158073?text=Hi%20Shree%20Jewellers%2C%20I%20am%20interested%20in%20exploring%20details%20for%3A%20Luxury%20Diamond%20Studded%20Rose%20Gold%20Watch" target="_blank" class="enquire">Enquire on WhatsApp →</a></div>
-    </div>
-    <div class="card" style="opacity:1;">
-      <div class="thumb"><img src="IMG-20260709-WA0063.jpg" alt="Royal Gold Mesh Bracelet Watch" loading="lazy"></div>
-      <div class="info"><div class="eyebrow">Luxury Timepiece</div><h3>Royal Gold Mesh Bracelet Watch</h3><a href="https://wa.me/916358158073?text=Hi%20Shree%20Jewellers%2C%20I%20am%20interested%20in%20exploring%20details%20for%3A%20Royal%20Gold%20Mesh%20Bracelet%20Watch" target="_blank" class="enquire">Enquire on WhatsApp →</a></div>
-    </div>
+    <!-- Managed exclusively via asynchronous high-speed JS engine -->
   </div>
 
   <div class="pdf-container-box" id="mangal-pdf-box">
@@ -657,12 +661,12 @@
     filtered.forEach((p, index) => {
       const card = document.createElement('div');
       card.className = 'card';
-      card.style.animationDelay = `${index * 0.02}s`;
+      card.style.animationDelay = `${index * 0.01}s`;
       const waText = encodeURIComponent(`Hi Shree Jewellers, I am interested in exploring custom parameters and information for this craftsmanship piece: "${p.name}".`);
       
       card.innerHTML = `
-        <div class="thumb">
-          <img src="${p.img}" alt="${p.name}" loading="lazy">
+        <div class="thumb" id="thumb-${category}-${index}">
+          <img src="${p.img}" alt="${p.name}" onload="document.getElementById('thumb-${category}-${index}').classList.add('loaded')">
         </div>
         <div class="info">
           <div class="eyebrow">${p.tag}</div>
@@ -676,7 +680,6 @@
     chainsPdf.classList.toggle('show', category === 'chains' || category === 'all');
   }
 
-  // Pre-load layout compilation on environment initialization
   filterCatalog('all');
 
   const form = document.getElementById('inquiry-form');
@@ -696,7 +699,7 @@
     const textOut = `Hello Shree Jewellers, my name is ${name}. I am submitting an item inquiry via your website container. %0A%0APhone: ${phone} %0AInterest: ${interest} %0ANotes: ${note}`;
     
     setTimeout(() => {
-        window.open(`https://wa.me/916358158073?text=${textOut}`, '_blank');
+        window.open(`https://wa.me/916358158073?text= ${textOut}`, '_blank');
     }, 1800);
   });
 </script>

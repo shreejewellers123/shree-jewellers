@@ -64,7 +64,7 @@
             padding: 16px 24px;
             background: rgba(23, 19, 16, 0.95);
             backdrop-filter: blur(6px);
-            border-bottom: 1px solid rgba(200, 161, 90, 0.1);
+            /* Removed the white border-bottom line from here */
         }
         .logo {
             font-family: 'Cormorant Garamond', serif;
@@ -699,4 +699,3 @@
 
 </body>
 </html>
-

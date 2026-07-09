@@ -240,23 +240,33 @@
   .card{
     border:1px solid var(--line);
     background:linear-gradient(180deg, rgba(200,161,90,0.04), transparent);
-    transition:transform 0.35s ease, border-color 0.35s ease;
+    transition:transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease;
     display: flex;
     flex-direction: column;
+    animation: cardPop 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    opacity: 0;
   }
-  .card:hover{ transform:translateY(-6px); border-color:var(--gold-dim); }
+  @keyframes cardPop {
+    0% { transform: translateY(12px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+  }
+  .card:hover{ transform:translateY(-8px); border-color:var(--gold-bright); box-shadow: 0 12px 24px rgba(0,0,0,0.4); }
+  
   .card .thumb{
     aspect-ratio:1/1;
     overflow:hidden;
-    background:#1a1613;
+    background:#1f1a16;
     border-bottom:1px solid var(--line);
     padding: 10px;
+    position: relative;
   }
   .card .thumb img {
     width: 100%;
     height: 100%;
     object-fit: contain;
+    transition: opacity 0.3s ease;
   }
+  
   .card .info{ padding:24px 22px 28px; text-align: center; }
   .card .info .eyebrow{ font-size:0.62rem; }
   .card .info h3{ font-size:1.3rem; margin-top:8px; min-height: 2.8rem; display: flex; align-items: center; justify-content: center; }
@@ -412,7 +422,6 @@
   </nav>
 </header>
 
-<!-- HERO -->
 <section class="hero">
   <div class="eyebrow">Mandvi, Kutch · Handcrafted Tradition</div>
   <h1>Jewellery carried<br><em>through generations</em></h1>
@@ -430,7 +439,6 @@
   </svg>
 </section>
 
-<!-- PRICE BAR -->
 <div class="price-bar">
     <div class="container">
         <div class="item">18K Gold: <span>₹5,200</span> / 1g</div>
@@ -440,7 +448,6 @@
     </div>
 </div>
 
-<!-- COLLECTIONS CONTAINER -->
 <section id="collections">
   <div class="section-head">
     <div class="eyebrow">Our Showroom</div>
@@ -448,21 +455,29 @@
     <p>Select a category filter button below to easily explore our specialized hand-finished ornament groups.</p>
   </div>
 
-  <!-- Dynamic Filter Navigation Bar Links -->
   <div class="filter-bar">
-    <button class="filter-btn active" onclick="filterCatalog('all')">Show All</button>
-    <button class="filter-btn" onclick="filterCatalog('watches')">Watches (9)</button>
-    <button class="filter-btn" onclick="filterCatalog('mangalsutras')">Mangalsutras (40+)</button>
-    <button class="filter-btn" onclick="filterCatalog('chains')">Gent's Chains (80+)</button>
-    <button class="filter-btn" onclick="filterCatalog('malas')">Traditional Malas (4)</button>
+    <button class="filter-btn active" id="btn-all" onclick="filterCatalog('all')">Show All</button>
+    <button class="filter-btn" id="btn-watches" onclick="filterCatalog('watches')">Watches (9)</button>
+    <button class="filter-btn" id="btn-mangalsutras" onclick="filterCatalog('mangalsutras')">Mangalsutras (40+)</button>
+    <button class="filter-btn" id="btn-chains" onclick="filterCatalog('chains')">Gent's Chains (80+)</button>
+    <button class="filter-btn" id="btn-malas" onclick="filterCatalog('malas')">Traditional Malas (4)</button>
   </div>
 
-  <!-- Main Unified Dynamic Grid Layout -->
   <div class="grid" id="product-grid">
-    <!-- Items dynamically inserted & filtered via custom JavaScript injection -->
+    <div class="card" style="opacity:1;">
+      <div class="thumb"><img src="IMG-20260709-WA0061.jpg" alt="Premium Gold Floral Edition Watch" loading="lazy"></div>
+      <div class="info"><div class="eyebrow">Luxury Timepiece</div><h3>Premium Gold Floral Edition Watch</h3><a href="https://wa.me/916358158073?text=Hi%20Shree%20Jewellers%2C%20I%20am%20interested%20in%20exploring%20details%20for%3A%20Premium%20Gold%20Floral%20Edition%20Watch" target="_blank" class="enquire">Enquire on WhatsApp →</a></div>
+    </div>
+    <div class="card" style="opacity:1;">
+      <div class="thumb"><img src="IMG-20260709-WA0062.jpg" alt="Luxury Diamond Studded Rose Gold Watch" loading="lazy"></div>
+      <div class="info"><div class="eyebrow">Luxury Timepiece</div><h3>Luxury Diamond Studded Rose Gold Watch</h3><a href="https://wa.me/916358158073?text=Hi%20Shree%20Jewellers%2C%20I%20am%20interested%20in%20exploring%20details%20for%3A%20Luxury%20Diamond%20Studded%20Rose%20Gold%20Watch" target="_blank" class="enquire">Enquire on WhatsApp →</a></div>
+    </div>
+    <div class="card" style="opacity:1;">
+      <div class="thumb"><img src="IMG-20260709-WA0063.jpg" alt="Royal Gold Mesh Bracelet Watch" loading="lazy"></div>
+      <div class="info"><div class="eyebrow">Luxury Timepiece</div><h3>Royal Gold Mesh Bracelet Watch</h3><a href="https://wa.me/916358158073?text=Hi%20Shree%20Jewellers%2C%20I%20am%20interested%20in%20exploring%20details%20for%3A%20Royal%20Gold%20Mesh%20Bracelet%20Watch" target="_blank" class="enquire">Enquire on WhatsApp →</a></div>
+    </div>
   </div>
 
-  <!-- Inline Category Sub-Booklet Catalog Targets -->
   <div class="pdf-container-box" id="mangal-pdf-box">
     <p>Looking for more traditional patterns? Our showroom houses over 40 distinct varieties.</p>
     <a href="mangalsutra.pdf" target="_blank" class="btn solid"><i class="far fa-file-pdf"></i> View Full Mangalsutra Catalog (PDF)</a>
@@ -474,7 +489,6 @@
   </div>
 </section>
 
-<!-- ABOUT -->
 <section class="about" id="about">
   <div class="frame">
     <div class="inner"></div>
@@ -492,7 +506,6 @@
   </div>
 </section>
 
-<!-- INQUIRY -->
 <section class="inquiry" id="inquiry">
   <div class="section-head">
     <div class="eyebrow">Get in Touch</div>
@@ -559,7 +572,6 @@
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer id="contact">
   <div>
     <p style="font-weight: 400; color: var(--gold); font-size: 1.1rem; letter-spacing: 0.05em;">श्री JEWELLERS</p>
@@ -584,7 +596,6 @@
 </footer>
 
 <script>
-  // Mobile Hamburger Menu Activation Logic
   const menuToggle = document.getElementById('menu-toggle');
   const navMenu = document.getElementById('nav-menu');
   
@@ -598,13 +609,11 @@
     });
   });
 
-  // Scroll header styling modifier
   const header = document.getElementById('site-header');
   window.addEventListener('scroll', () => {
     header.classList.toggle('scrolled', window.scrollY > 40);
   });
 
-  // Unified Multi-Category Showroom Master Database Array
   const PRODUCTS = [
     { cat:'watches', tag:'Luxury Timepiece', name:'Premium Gold Floral Edition Watch', img:'IMG-20260709-WA0061.jpg' },
     { cat:'watches', tag:'Luxury Timepiece', name:'Luxury Diamond Studded Rose Gold Watch', img:'IMG-20260709-WA0062.jpg' },
@@ -635,23 +644,20 @@
   const mangalPdf = document.getElementById('mangal-pdf-box');
   const chainsPdf = document.getElementById('chains-pdf-box');
 
-  // Intelligent Processing & Active Filtering Engine
   function filterCatalog(category) {
-    // 1. Update filter button active states visually
     const buttons = document.querySelectorAll('.filter-btn');
     buttons.forEach(btn => btn.classList.remove('active'));
-    event.currentTarget.classList.add('active');
+    
+    const activeBtn = document.getElementById(`btn-${category}`);
+    if (activeBtn) activeBtn.classList.add('active');
 
-    // 2. Clear out container grid view contents
     grid.innerHTML = '';
-
-    // 3. Filter target matches array
     const filtered = category === 'all' ? PRODUCTS : PRODUCTS.filter(p => p.cat === category);
 
-    // 4. Map and render targeted cards
-    filtered.forEach(p => {
+    filtered.forEach((p, index) => {
       const card = document.createElement('div');
       card.className = 'card';
+      card.style.animationDelay = `${index * 0.02}s`;
       const waText = encodeURIComponent(`Hi Shree Jewellers, I am interested in exploring custom parameters and information for this craftsmanship piece: "${p.name}".`);
       
       card.innerHTML = `
@@ -666,15 +672,13 @@
       grid.appendChild(card);
     });
 
-    // 5. Context-aware PDF block activation processing
     mangalPdf.classList.toggle('show', category === 'mangalsutras' || category === 'all');
     chainsPdf.classList.toggle('show', category === 'chains' || category === 'all');
   }
 
-  // Initial core engine launch compilation
+  // Pre-load layout compilation on environment initialization
   filterCatalog('all');
 
-  // Automated preference-sheet forward processing algorithm
   const form = document.getElementById('inquiry-form');
   const confirmMsg = document.getElementById('confirm-msg');
   
@@ -699,5 +703,4 @@
 
 </body>
 </html>
-
 

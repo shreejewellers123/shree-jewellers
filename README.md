@@ -96,7 +96,7 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding: 120px 20px 60px;
+            padding: 140px 20px 60px;
             background: radial-gradient(ellipse at 50% 0%, rgba(200, 161, 90, 0.1), transparent 60%),
                         linear-gradient(180deg, #171310 0%, #1c1712 100%);
             border-bottom: 1px solid rgba(200, 161, 90, 0.08);
@@ -104,12 +104,12 @@
         .hero .container {
             max-width: 780px;
         }
-        .hero .shop-name {
-            font-size: clamp(1.2rem, 2vw, 1.6rem);
-            letter-spacing: 0.2em;
+        .hero .logo-mid {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            letter-spacing: 0.1em;
             color: #c8a15a;
-            font-weight: 400;
-            margin-bottom: 12px;
+            margin-bottom: 24px;
         }
         .hero h1 {
             font-size: clamp(2.4rem, 6vw, 4.5rem);
@@ -513,10 +513,9 @@
     </nav>
 </header>
 
-<!-- HERO -->
 <section class="hero">
     <div class="container">
-        <div class="shop-name">श्री Jewellers</div>
+        <div class="logo-mid">श्री Jewellers</div>
         <h1>Jewellery carried<br><em>through generations</em></h1>
         <p>Each piece at Shree Jewellers is shaped by hand, in gold and stone, following techniques passed down across generations of our karigars.</p>
         <div class="btn-group">
@@ -526,7 +525,6 @@
     </div>
 </section>
 
-<!-- PRICE BAR -->
 <div class="price-bar">
     <div class="container">
         <div class="item">18K Gold: <span>₹5,200</span> / 1g</div>
@@ -536,7 +534,6 @@
     </div>
 </div>
 
-<!-- ABOUT -->
 <section class="about" id="about">
     <div class="container">
         <div class="frame">
@@ -556,7 +553,6 @@
     </div>
 </section>
 
-<!-- GALLERY -->
 <section id="gallery">
     <div class="container">
         <div class="section-head">
@@ -650,7 +646,6 @@
     </div>
 </section>
 
-<!-- CONTACT -->
 <section class="contact" id="contact">
     <div class="container">
         <div class="section-head">
@@ -678,7 +673,6 @@
     </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
     <div class="container">
         <div>
@@ -705,3 +699,4 @@
 
 </body>
 </html>
+

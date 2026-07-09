@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
@@ -104,6 +103,13 @@
         }
         .hero .container {
             max-width: 780px;
+        }
+        .hero .shop-name {
+            font-size: clamp(1.2rem, 2vw, 1.6rem);
+            letter-spacing: 0.2em;
+            color: #c8a15a;
+            font-weight: 400;
+            margin-bottom: 12px;
         }
         .hero h1 {
             font-size: clamp(2.4rem, 6vw, 4.5rem);
@@ -510,6 +516,7 @@
 <!-- HERO -->
 <section class="hero">
     <div class="container">
+        <div class="shop-name">श्री Jewellers</div>
         <h1>Jewellery carried<br><em>through generations</em></h1>
         <p>Each piece at Shree Jewellers is shaped by hand, in gold and stone, following techniques passed down across generations of our karigars.</p>
         <div class="btn-group">
@@ -558,7 +565,6 @@
             <p>Each piece is unique — crafted with care and precision by our master artisans.</p>
         </div>
         <div class="gallery-grid">
-            <!-- Item 1 -->
             <div class="card">
                 <div class="thumb"><img src="https://i.ibb.co/0jmq2M9S/motion-photo-1551257267689762343.jpg" alt="Gold Jewellery"></div>
                 <div class="info">
@@ -568,7 +574,6 @@
                     <a href="https://wa.me/916358158073?text=Hi%20Shree%20Jewellers%2C%20I%27m%20interested%20in%20this%20gold%20jewellery." target="_blank" class="enquire">Enquire →</a>
                 </div>
             </div>
-            <!-- Item 2 -->
             <div class="card">
                 <div class="thumb"><img src="https://i.ibb.co/nNHvbTkR/IMG-20260709-WA0008.jpg" alt="Gold Jewellery"></div>
                 <div class="info">
@@ -578,7 +583,6 @@
                     <a href="https://wa.me/916358158073?text=Hi%20Shree%20Jewellers%2C%20I%27m%20interested%20in%20this%20gold%20jewellery." target="_blank" class="enquire">Enquire →</a>
                 </div>
             </div>
-            <!-- Item 3 -->
             <div class="card">
                 <div class="thumb"><img src="https://i.ibb.co/rKBR6VKp/IMG-20260709-WA0007.jpg" alt="Gold Jewellery"></div>
                 <div class="info">
@@ -588,7 +592,6 @@
                     <a href="https://wa.me/916358158073?text=Hi%20Shree%20Jewellers%2C%20I%27m%20interested%20in%20this%20gold%20jewellery." target="_blank" class="enquire">Enquire →</a>
                 </div>
             </div>
-            <!-- Item 4 -->
             <div class="card">
                 <div class="thumb"><img src="https://i.ibb.co/KjZ3NDFG/IMG-20260709-WA0011.jpg" alt="Gold Jewellery"></div>
                 <div class="info">
@@ -598,7 +601,6 @@
                     <a href="https://wa.me/916358158073?text=Hi%20Shree%20Jewellers%2C%20I%27m%20interested%20in%20this%20gold%20jewellery." target="_blank" class="enquire">Enquire →</a>
                 </div>
             </div>
-            <!-- Item 5 -->
             <div class="card">
                 <div class="thumb"><img src="https://i.ibb.co/V0smJjkH/IMG-20260709-WA0013.jpg" alt="Gold Jewellery"></div>
                 <div class="info">
@@ -608,7 +610,6 @@
                     <a href="https://wa.me/916358158073?text=Hi%20Shree%20Jewellers%2C%20I%27m%20interested%20in%20this%20gold%20jewellery." target="_blank" class="enquire">Enquire →</a>
                 </div>
             </div>
-            <!-- Item 6 -->
             <div class="card">
                 <div class="thumb"><img src="https://i.ibb.co/S7yqQ8Tw/IMG-20260709-WA0012.jpg" alt="Gold Jewellery"></div>
                 <div class="info">
@@ -618,7 +619,6 @@
                     <a href="https://wa.me/916358158073?text=Hi%20Shree%20Jewellers%2C%20I%27m%20interested%20in%20this%20gold%20jewellery." target="_blank" class="enquire">Enquire →</a>
                 </div>
             </div>
-            <!-- Item 7 -->
             <div class="card">
                 <div class="thumb"><img src="https://i.ibb.co/KjHXPPxW/IMG-20260709-WA0018.jpg" alt="Gold Jewellery"></div>
                 <div class="info">
@@ -628,7 +628,6 @@
                     <a href="https://wa.me/916358158073?text=Hi%20Shree%20Jewellers%2C%20I%27m%20interested%20in%20this%20gold%20jewellery." target="_blank" class="enquire">Enquire →</a>
                 </div>
             </div>
-            <!-- Item 8 -->
             <div class="card">
                 <div class="thumb"><img src="https://i.ibb.co/hFDST0rg/IMG-20260709-WA0016.jpg" alt="Gold Jewellery"></div>
                 <div class="info">
@@ -638,7 +637,6 @@
                     <a href="https://wa.me/916358158073?text=Hi%20Shree%20Jewellers%2C%20I%27m%20interested%20in%20this%20gold%20jewellery." target="_blank" class="enquire">Enquire →</a>
                 </div>
             </div>
-            <!-- Item 9 -->
             <div class="card">
                 <div class="thumb"><img src="https://i.ibb.co/XZvkjfW2/IMG-20260709-WA0017.jpg" alt="Gold Jewellery"></div>
                 <div class="info">
@@ -707,5 +705,3 @@
 
 </body>
 </html>
-
-

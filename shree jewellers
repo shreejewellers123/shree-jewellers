@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
@@ -25,7 +26,7 @@
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 24px;
+            padding: 0 20px;
         }
         h1, h2, h3 {
             font-family: 'Cormorant Garamond', serif;
@@ -34,7 +35,7 @@
         }
         .eyebrow {
             font-family: 'Jost', sans-serif;
-            font-size: 0.72rem;
+            font-size: 0.7rem;
             letter-spacing: 0.3em;
             text-transform: uppercase;
             color: #c8a15a;
@@ -47,6 +48,9 @@
             max-width: 100%;
             display: block;
         }
+        .text-center {
+            text-align: center;
+        }
 
         /* HEADER */
         header {
@@ -58,14 +62,14 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 18px 5vw;
-            background: rgba(23, 19, 16, 0.92);
+            padding: 16px 24px;
+            background: rgba(23, 19, 16, 0.95);
             backdrop-filter: blur(6px);
-            border-bottom: 1px solid rgba(200, 161, 90, 0.15);
+            border-bottom: 1px solid rgba(200, 161, 90, 0.1);
         }
         .logo {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 1.6rem;
+            font-size: 1.4rem;
             letter-spacing: 0.08em;
         }
         .logo span {
@@ -73,10 +77,10 @@
         }
         nav {
             display: flex;
-            gap: 32px;
+            gap: 28px;
         }
         nav a {
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             letter-spacing: 0.15em;
             text-transform: uppercase;
             color: #c9bfae;
@@ -93,16 +97,16 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding: 120px 24px 80px;
-            background: radial-gradient(ellipse at 50% 0%, rgba(200, 161, 90, 0.12), transparent 60%),
+            padding: 100px 20px 60px;
+            background: radial-gradient(ellipse at 50% 0%, rgba(200, 161, 90, 0.1), transparent 60%),
                         linear-gradient(180deg, #171310 0%, #1c1712 100%);
-            border-bottom: 1px solid rgba(200, 161, 90, 0.1);
+            border-bottom: 1px solid rgba(200, 161, 90, 0.08);
         }
         .hero .container {
-            max-width: 820px;
+            max-width: 780px;
         }
         .hero h1 {
-            font-size: clamp(2.8rem, 7vw, 5rem);
+            font-size: clamp(2.4rem, 6vw, 4.5rem);
             line-height: 1.05;
         }
         .hero h1 em {
@@ -110,22 +114,25 @@
             color: #e6c98a;
         }
         .hero p {
-            margin-top: 24px;
+            margin-top: 20px;
             color: #c9bfae;
-            font-size: 1.05rem;
+            font-size: 1rem;
             line-height: 1.7;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
         .btn-group {
-            margin-top: 40px;
+            margin-top: 36px;
             display: flex;
-            gap: 16px;
+            gap: 14px;
             flex-wrap: wrap;
             justify-content: center;
         }
         .btn {
             display: inline-block;
-            padding: 14px 32px;
-            font-size: 0.75rem;
+            padding: 12px 28px;
+            font-size: 0.7rem;
             letter-spacing: 0.2em;
             text-transform: uppercase;
             border: 1px solid #c8a15a;
@@ -144,76 +151,81 @@
         }
         .btn-primary:hover {
             background: #e6c98a;
-            color: #171310;
         }
 
         /* PRICE BAR */
         .price-bar {
-            background: #211b16;
-            padding: 20px 0;
-            border-top: 1px solid rgba(200, 161, 90, 0.15);
-            border-bottom: 1px solid rgba(200, 161, 90, 0.15);
+            background: #1a1613;
+            padding: 18px 0;
+            border-top: 1px solid rgba(200, 161, 90, 0.08);
+            border-bottom: 1px solid rgba(200, 161, 90, 0.08);
             text-align: center;
         }
         .price-bar .container {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 24px 48px;
+            gap: 16px 36px;
         }
         .price-bar .item {
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             letter-spacing: 0.05em;
         }
         .price-bar .item span {
             color: #e6c98a;
             font-weight: 600;
-            font-size: 1.1rem;
+            font-size: 1rem;
         }
 
         /* ABOUT */
         .about {
-            background: #211b16;
-            padding: 80px 0;
+            background: #1a1613;
+            padding: 60px 0;
         }
         .about .container {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 60px;
+            gap: 50px;
             align-items: center;
         }
         .about .frame {
             aspect-ratio: 4/5;
-            border: 1px solid rgba(200, 161, 90, 0.2);
-            padding: 12px;
+            border: 1px solid rgba(200, 161, 90, 0.12);
+            padding: 10px;
         }
         .about .frame .inner {
             height: 100%;
             width: 100%;
             background: url('https://i.ibb.co/7JVwXs0j/IMG-20260709-WA0006.jpg') center/cover no-repeat;
         }
+        .about .copy .eyebrow {
+            margin-bottom: 6px;
+        }
         .about .copy h2 {
-            font-size: clamp(1.8rem, 3vw, 2.6rem);
-            margin-top: 8px;
-            margin-bottom: 20px;
+            font-size: clamp(1.6rem, 2.8vw, 2.4rem);
+            margin-bottom: 16px;
         }
         .about .copy p {
             color: #c9bfae;
             line-height: 1.8;
-            margin-bottom: 16px;
+            font-size: 0.95rem;
+            margin-bottom: 14px;
         }
         .stats {
             display: flex;
-            gap: 40px;
-            margin-top: 30px;
+            gap: 30px;
+            margin-top: 24px;
             flex-wrap: wrap;
+        }
+        .stats div {
+            text-align: center;
         }
         .stats h3 {
             color: #e6c98a;
-            font-size: 1.8rem;
+            font-size: 1.6rem;
         }
         .stats span {
-            font-size: 0.7rem;
+            font-size: 0.65rem;
             letter-spacing: 0.1em;
             text-transform: uppercase;
             color: #c9bfae;
@@ -221,42 +233,45 @@
 
         /* GALLERY */
         #gallery {
-            background: #1a1613;
-            padding: 80px 0;
+            background: #171310;
+            padding: 60px 0;
         }
         .section-head {
             text-align: center;
-            max-width: 600px;
-            margin: 0 auto 48px;
+            max-width: 560px;
+            margin: 0 auto 40px;
         }
         .section-head h2 {
-            font-size: clamp(2rem, 4vw, 2.8rem);
-            margin-top: 10px;
+            font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+            margin-top: 8px;
         }
         .section-head p {
             color: #c9bfae;
-            margin-top: 14px;
+            margin-top: 12px;
             line-height: 1.7;
+            font-size: 0.95rem;
         }
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 24px;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
         }
         .card {
-            border: 1px solid rgba(200, 161, 90, 0.15);
+            border: 1px solid rgba(200, 161, 90, 0.1);
             background: rgba(200, 161, 90, 0.03);
             transition: 0.3s;
+            text-align: center;
         }
         .card:hover {
             transform: translateY(-4px);
-            border-color: rgba(200, 161, 90, 0.4);
+            border-color: rgba(200, 161, 90, 0.3);
         }
         .card .thumb {
             aspect-ratio: 1/1;
             overflow: hidden;
-            background: #211b16;
-            border-bottom: 1px solid rgba(200, 161, 90, 0.1);
+            background: #1a1613;
+            border-bottom: 1px solid rgba(200, 161, 90, 0.06);
+            max-height: 320px;
         }
         .card .thumb img {
             width: 100%;
@@ -264,69 +279,71 @@
             object-fit: cover;
         }
         .card .info {
-            padding: 20px 20px 24px;
+            padding: 18px 16px 22px;
         }
         .card .info .eyebrow {
-            font-size: 0.6rem;
+            font-size: 0.55rem;
         }
         .card .info h3 {
-            font-size: 1.3rem;
-            margin-top: 6px;
+            font-size: 1.2rem;
+            margin-top: 4px;
         }
         .card .info .price {
             color: #e6c98a;
-            margin-top: 8px;
-            font-size: 0.95rem;
+            margin-top: 6px;
+            font-size: 0.9rem;
         }
         .card .info .enquire {
             display: inline-block;
-            margin-top: 14px;
-            font-size: 0.7rem;
+            margin-top: 12px;
+            font-size: 0.65rem;
             letter-spacing: 0.15em;
             text-transform: uppercase;
             color: #c8a15a;
-            border-bottom: 1px solid rgba(200, 161, 90, 0.3);
-            padding-bottom: 4px;
+            border-bottom: 1px solid rgba(200, 161, 90, 0.25);
+            padding-bottom: 3px;
+            transition: 0.3s;
         }
         .card .info .enquire:hover {
             color: #e6c98a;
+            border-color: #e6c98a;
         }
 
         /* CONTACT */
         .contact {
-            background: #211b16;
-            padding: 80px 0;
+            background: #1a1613;
+            padding: 60px 0;
             text-align: center;
         }
         .contact .container {
-            max-width: 600px;
+            max-width: 580px;
         }
         .contact .info p {
-            margin: 14px 0;
-            font-size: 1rem;
+            margin: 12px 0;
+            font-size: 0.95rem;
             color: #c9bfae;
         }
         .contact .info i {
             color: #c8a15a;
             margin-right: 10px;
-            width: 22px;
+            width: 20px;
         }
         .social-links {
             display: flex;
             justify-content: center;
-            gap: 16px;
-            margin: 28px 0;
+            gap: 14px;
+            margin: 24px 0;
         }
         .social-links a {
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 50px;
-            height: 50px;
+            width: 46px;
+            height: 46px;
             border-radius: 50%;
-            border: 1px solid #c8a15a;
+            border: 1px solid rgba(200, 161, 90, 0.3);
             color: #e6c98a;
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             transition: 0.3s;
         }
         .social-links a:hover {
@@ -335,10 +352,11 @@
         }
         .whatsapp-btn, .insta-btn {
             display: inline-block;
-            padding: 12px 30px;
+            padding: 11px 28px;
             border-radius: 50px;
             font-weight: 600;
-            margin: 6px;
+            font-size: 0.85rem;
+            margin: 5px;
             transition: 0.3s;
         }
         .whatsapp-btn {
@@ -358,14 +376,14 @@
             transform: translateY(-2px);
         }
         .map-container {
-            margin-top: 30px;
-            border-radius: 12px;
+            margin-top: 24px;
+            border-radius: 10px;
             overflow: hidden;
-            border: 1px solid rgba(200, 161, 90, 0.15);
+            border: 1px solid rgba(200, 161, 90, 0.08);
         }
         .map-container iframe {
             width: 100%;
-            height: 260px;
+            height: 240px;
             border: 0;
             display: block;
         }
@@ -373,47 +391,48 @@
         /* FOOTER */
         footer {
             background: #171310;
-            padding: 60px 0 30px;
-            border-top: 1px solid rgba(200, 161, 90, 0.1);
+            padding: 50px 0 24px;
+            border-top: 1px solid rgba(200, 161, 90, 0.06);
         }
         footer .container {
             display: grid;
             grid-template-columns: 1.4fr 1fr 1fr;
-            gap: 40px;
+            gap: 36px;
         }
         footer .logo {
-            font-size: 1.4rem;
+            font-size: 1.3rem;
         }
         footer p {
             color: #c9bfae;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             line-height: 1.7;
-            margin-top: 10px;
+            margin-top: 8px;
         }
         footer h4 {
-            font-size: 0.7rem;
+            font-size: 0.65rem;
             letter-spacing: 0.2em;
             text-transform: uppercase;
             color: #c8a15a;
-            margin-bottom: 16px;
+            margin-bottom: 14px;
             font-weight: 400;
         }
         footer a {
             display: block;
             color: #c9bfae;
-            font-size: 0.9rem;
-            margin-bottom: 8px;
+            font-size: 0.85rem;
+            margin-bottom: 6px;
+            transition: 0.3s;
         }
         footer a:hover {
             color: #e6c98a;
         }
         .footer-bottom {
             text-align: center;
-            margin-top: 50px;
-            padding-top: 20px;
-            border-top: 1px solid rgba(200, 161, 90, 0.08);
-            font-size: 0.75rem;
-            color: #8a7a6a;
+            margin-top: 40px;
+            padding-top: 18px;
+            border-top: 1px solid rgba(200, 161, 90, 0.06);
+            font-size: 0.7rem;
+            color: #7a6a5a;
             grid-column: 1 / -1;
         }
 
@@ -424,17 +443,27 @@
             }
             .about .container {
                 grid-template-columns: 1fr;
-                gap: 40px;
+                gap: 30px;
             }
             footer .container {
                 grid-template-columns: 1fr;
-                gap: 30px;
+                gap: 24px;
             }
             .gallery-grid {
                 grid-template-columns: 1fr 1fr;
+                gap: 16px;
             }
             .price-bar .container {
-                gap: 12px 20px;
+                gap: 10px 20px;
+            }
+            .price-bar .item {
+                font-size: 0.8rem;
+            }
+            .hero {
+                padding: 80px 16px 40px;
+            }
+            .hero p {
+                font-size: 0.9rem;
             }
         }
         @media (max-width: 480px) {
@@ -442,17 +471,34 @@
                 grid-template-columns: 1fr;
             }
             .container {
-                padding: 0 16px;
-            }
-            .hero {
-                padding: 100px 16px 60px;
+                padding: 0 14px;
             }
             .btn {
-                padding: 12px 24px;
-                font-size: 0.7rem;
+                padding: 10px 20px;
+                font-size: 0.65rem;
             }
             .price-bar .item {
-                font-size: 0.8rem;
+                font-size: 0.75rem;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .about .copy h2 {
+                font-size: 1.4rem;
+            }
+            .card .thumb {
+                max-height: 250px;
+            }
+            .stats {
+                justify-content: center;
+                gap: 20px;
+            }
+            .contact .info p {
+                font-size: 0.85rem;
+            }
+            .whatsapp-btn, .insta-btn {
+                padding: 10px 20px;
+                font-size: 0.75rem;
             }
         }
     </style>
@@ -520,7 +566,6 @@
             <p>Each piece is unique — crafted with care and precision by our master artisans.</p>
         </div>
         <div class="gallery-grid">
-            <!-- Card 1 -->
             <div class="card">
                 <div class="thumb"><img src="https://i.ibb.co/0jmq2M9S/motion-photo-1551257267689762343.jpg" alt="Gold Jewellery"></div>
                 <div class="info">
@@ -530,7 +575,6 @@
                     <a href="https://wa.me/916358158073?text=Hi%20Shree%20Jewellers%2C%20I%27m%20interested%20in%20this%20gold%20jewellery." target="_blank" class="enquire">Enquire →</a>
                 </div>
             </div>
-            <!-- Card 2 -->
             <div class="card">
                 <div class="thumb"><img src="https://i.ibb.co/nNHvbTkR/IMG-20260709-WA0008.jpg" alt="Gold Jewellery"></div>
                 <div class="info">
@@ -540,7 +584,6 @@
                     <a href="https://wa.me/916358158073?text=Hi%20Shree%20Jewellers%2C%20I%27m%20interested%20in%20this%20gold%20jewellery." target="_blank" class="enquire">Enquire →</a>
                 </div>
             </div>
-            <!-- Card 3 -->
             <div class="card">
                 <div class="thumb"><img src="https://i.ibb.co/rKBR6VKp/IMG-20260709-WA0007.jpg" alt="Gold Jewellery"></div>
                 <div class="info">
@@ -550,7 +593,6 @@
                     <a href="https://wa.me/916358158073?text=Hi%20Shree%20Jewellers%2C%20I%27m%20interested%20in%20this%20gold%20jewellery." target="_blank" class="enquire">Enquire →</a>
                 </div>
             </div>
-            <!-- Card 4 -->
             <div class="card">
                 <div class="thumb"><img src="https://i.ibb.co/KjZ3NDFG/IMG-20260709-WA0011.jpg" alt="Gold Jewellery"></div>
                 <div class="info">
@@ -560,7 +602,6 @@
                     <a href="https://wa.me/916358158073?text=Hi%20Shree%20Jewellers%2C%20I%27m%20interested%20in%20this%20gold%20jewellery." target="_blank" class="enquire">Enquire →</a>
                 </div>
             </div>
-            <!-- Card 5 -->
             <div class="card">
                 <div class="thumb"><img src="https://i.ibb.co/V0smJjkH/IMG-20260709-WA0013.jpg" alt="Gold Jewellery"></div>
                 <div class="info">
@@ -570,7 +611,6 @@
                     <a href="https://wa.me/916358158073?text=Hi%20Shree%20Jewellers%2C%20I%27m%20interested%20in%20this%20gold%20jewellery." target="_blank" class="enquire">Enquire →</a>
                 </div>
             </div>
-            <!-- Card 6 -->
             <div class="card">
                 <div class="thumb"><img src="https://i.ibb.co/S7yqQ8Tw/IMG-20260709-WA0012.jpg" alt="Gold Jewellery"></div>
                 <div class="info">
@@ -580,7 +620,6 @@
                     <a href="https://wa.me/916358158073?text=Hi%20Shree%20Jewellers%2C%20I%27m%20interested%20in%20this%20gold%20jewellery." target="_blank" class="enquire">Enquire →</a>
                 </div>
             </div>
-            <!-- Card 7 -->
             <div class="card">
                 <div class="thumb"><img src="https://i.ibb.co/KjHXPPxW/IMG-20260709-WA0018.jpg" alt="Gold Jewellery"></div>
                 <div class="info">
@@ -590,7 +629,6 @@
                     <a href="https://wa.me/916358158073?text=Hi%20Shree%20Jewellers%2C%20I%27m%20interested%20in%20this%20gold%20jewellery." target="_blank" class="enquire">Enquire →</a>
                 </div>
             </div>
-            <!-- Card 8 -->
             <div class="card">
                 <div class="thumb"><img src="https://i.ibb.co/hFDST0rg/IMG-20260709-WA0016.jpg" alt="Gold Jewellery"></div>
                 <div class="info">
@@ -600,7 +638,6 @@
                     <a href="https://wa.me/916358158073?text=Hi%20Shree%20Jewellers%2C%20I%27m%20interested%20in%20this%20gold%20jewellery." target="_blank" class="enquire">Enquire →</a>
                 </div>
             </div>
-            <!-- Card 9 -->
             <div class="card">
                 <div class="thumb"><img src="https://i.ibb.co/XZvkjfW2/IMG-20260709-WA0017.jpg" alt="Gold Jewellery"></div>
                 <div class="info">

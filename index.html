@@ -472,15 +472,22 @@
   <div class="filter-bar">
     <button class="filter-btn active" id="btn-all" onclick="filterCatalog('all')">Show All</button>
     <button class="filter-btn" id="btn-watches" onclick="filterCatalog('watches')">Watches (9)</button>
+    <button class="filter-btn" id="btn-bangles" onclick="filterCatalog('bangles')">Bangles (50+)</button>
     <button class="filter-btn" id="btn-mangalsutras" onclick="filterCatalog('mangalsutras')">Mangalsutras (40+)</button>
     <button class="filter-btn" id="btn-chains" onclick="filterCatalog('chains')">Gent's Chains (80+)</button>
     <button class="filter-btn" id="btn-malas" onclick="filterCatalog('malas')">Traditional Malas (4)</button>
     <button class="filter-btn" id="btn-chandanhar" onclick="filterCatalog('chandanhar')">Chandanhar (10+)</button>
+    <button class="filter-btn" id="btn-haar" onclick="filterCatalog('haar')">Bridal Haar (30+)</button>
   </div>
 
   <!-- Main Unified Layout Grid -->
   <div class="grid" id="product-grid">
     <!-- Managed exclusively via asynchronous high-speed JS engine -->
+  </div>
+
+  <div class="pdf-container-box" id="bangles-pdf-box">
+    <p>Explore our complete heritage bangles lineup featuring over 50+ solid gold artisan bangles and kadas.</p>
+    <a href="bangles.pdf" target="_blank" class="btn solid"><i class="far fa-file-pdf"></i> View Full Bangles Catalog (PDF)</a>
   </div>
 
   <div class="pdf-container-box" id="mangal-pdf-box">
@@ -490,12 +497,17 @@
 
   <div class="pdf-container-box" id="chains-pdf-box">
     <p>Discover our complete heavy gold lineup featuring over 80+ handcrafted custom solid link configurations.</p>
-    <a href="chains.pdf" target="_blank" class="btn solid"><i class="far fa-file-pdf"></i> View Full Gent's Chain Catalog (PDF)</a>
+    <a href="chain.pdf" target="_blank" class="btn solid"><i class="far fa-file-pdf"></i> View Full Gent's Chain Catalog (PDF)</a>
   </div>
 
   <div class="pdf-container-box" id="chandanhar-pdf-box">
     <p>Explore our complete bridal heritage lineup featuring premium handcrafted custom Chandanhar sets.</p>
     <a href="Chandanhar.pdf" target="_blank" class="btn solid"><i class="far fa-file-pdf"></i> View Full Chandanhar Catalog (PDF)</a>
+  </div>
+
+  <div class="pdf-container-box" id="haar-pdf-box">
+    <p>Discover our magnificent bridal necklace collection containing over 30+ luxury antique and fine gold sets.</p>
+    <a href="haar.pdf" target="_blank" class="btn solid"><i class="far fa-file-pdf"></i> View Full Bridal Haar Catalog (PDF)</a>
   </div>
 </section>
 
@@ -540,10 +552,12 @@
           <label for="interest">Interested In</label>
           <select id="interest">
             <option>Premium Luxury Watches</option>
+            <option>Artisan Heritage Bangles</option>
             <option>Handcrafted Mangalsutras</option>
             <option>Gent's Solid Chains</option>
             <option>Exclusive Traditional Malas</option>
             <option>Handcrafted Heritage Chandanhar</option>
+            <option>Luxury Fine Bridal Haar</option>
             <option>Custom Handcrafted Ornaments</option>
           </select>
         </div>
@@ -636,6 +650,13 @@
     { cat:'watches', tag:'Luxury Timepiece', name:'Exclusive Premium Dial Gold Watch', img:'IMG-20260709-WA0068.jpg' },
     { cat:'watches', tag:'Luxury Timepiece', name:'Luxury Sovereign Full Gold Set Watch', img:'IMG-20260709-WA0069.jpg' },
 
+    { cat:'bangles', tag:'Artisan Kada', name:'Heritage Hand-Carved Royal Bangle', img:'bangles1.jpg' },
+    { cat:'bangles', tag:'Artisan Kada', name:'Premium Antique Embossed Gold Bangle', img:'bangles2.jpg' },
+    { cat:'bangles', tag:'Artisan Kada', name:'Exclusive Traditional Kutch Craft Bangle', img:'bangles3.jpg' },
+    { cat:'bangles', tag:'Artisan Kada', name:'Fine Lattice Handcrafted Gold Bangle Set', img:'bangles4.jpg' },
+    { cat:'bangles', tag:'Artisan Kada', name:'Royal Classic Broad Mesh Kada', img:'bangles5.jpg' },
+    { cat:'bangles', tag:'Artisan Kada', name:'Bridal Festive Floral Fine Edge Bangle', img:'bangles6.jpg' },
+
     { cat:'mangalsutras', tag:'Handcrafted Mangalsutra', name:'Royal Antique Gold Craft Mangalsutra', img:'mangalsutra1.jpg' },
     { cat:'mangalsutras', tag:'Handcrafted Mangalsutra', name:'Traditional Intricate Black Bead Mangalsutra', img:'mangalsutra 2.jpg' },
     { cat:'mangalsutras', tag:'Handcrafted Mangalsutra', name:'Exclusive Contemporary Gold Floral Mangalsutra', img:'mangalsutra3.jpg' },
@@ -653,13 +674,22 @@
     { cat:'chandanhar', tag:'Heritage Chandanhar', name:'Handcrafted Royal Gold Chandanhar Set', img:'chandanhar1.jpg' },
     { cat:'chandanhar', tag:'Heritage Chandanhar', name:'Classic Heritage Triple Layer Chandanhar', img:'chandanhar2.jpg' },
     { cat:'chandanhar', tag:'Heritage Chandanhar', name:'Exclusive Traditional Bridal Chandanhar', img:'chandanhar3.jpg' },
-    { cat:'chandanhar', tag:'Heritage Chandanhar', name:'Premium Ornate Antique Gold Chandanhar', img:'chandanhar4.jpg' }
+    { cat:'chandanhar', tag:'Heritage Chandanhar', name:'Premium Ornate Antique Gold Chandanhar', img:'chandanhar4.jpg' },
+
+    { cat:'haar', tag:'Fine Bridal Necklace', name:'Grand Royal Polki Embedded Haar', img:'haar1.jpg' },
+    { cat:'haar', tag:'Fine Bridal Necklace', name:'Exclusive Antique Filigree Choker Haar', img:'haar2.jpg' },
+    { cat:'haar', tag:'Fine Bridal Necklace', name:'Heritage Handworked Floral Statement Haar', img:'haar3.jpg' },
+    { cat:'haar', tag:'Fine Bridal Necklace', name:'Sovereign Layered Festive Gold Haar', img:'haar4.jpg' },
+    { cat:'haar', tag:'Fine Bridal Necklace', name:'Elegant Intricate Traditional Bridal Haar', img:'haar5.jpg' },
+    { cat:'haar', tag:'Fine Bridal Necklace', name:'Premium Artisan Mesh Work Masterpiece Haar', img:'haar6.jpg' }
   ];
 
   const grid = document.getElementById('product-grid');
+  const banglesPdf = document.getElementById('bangles-pdf-box');
   const mangalPdf = document.getElementById('mangal-pdf-box');
   const chainsPdf = document.getElementById('chains-pdf-box');
   const chandanharPdf = document.getElementById('chandanhar-pdf-box');
+  const haarPdf = document.getElementById('haar-pdf-box');
 
   function filterCatalog(category) {
     const buttons = document.querySelectorAll('.filter-btn');
@@ -689,9 +719,11 @@
       grid.appendChild(card);
     });
 
+    banglesPdf.classList.toggle('show', category === 'bangles' || category === 'all');
     mangalPdf.classList.toggle('show', category === 'mangalsutras' || category === 'all');
     chainsPdf.classList.toggle('show', category === 'chains' || category === 'all');
     chandanharPdf.classList.toggle('show', category === 'chandanhar' || category === 'all');
+    haarPdf.classList.toggle('show', category === 'haar' || category === 'all');
   }
 
   filterCatalog('all');
@@ -719,5 +751,5 @@
 </script>
 
 </body>
-</html>
+      </html>
 
